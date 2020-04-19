@@ -29,7 +29,7 @@ public abstract class Osoba extends ObjectPlus implements Serializable {
         return nazwisko;
     }
 
-    public abstract LocalDate getData();
+    public abstract LocalDate getDataDodania();
 
     public void addZamowienieKlient(Zamowienie noweZakupy) throws Exception {
         if (!zamowienia.contains(noweZakupy)) {

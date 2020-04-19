@@ -1,19 +1,18 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Sprzedawca extends Osoba {
 
     private String PESEL;
     private long telefon;
-    private LocalDate data;
+    private LocalDate dataDodania;
     private int wynagrodzenie;
 
     // Konstruktor
-    public Sprzedawca(String imie, String nazwisko, String PESEL, long telefon, LocalDate date, int wynagrodzenie) {
+    public Sprzedawca(String imie, String nazwisko, String PESEL, long telefon, int wynagrodzenie) {
         super(imie, nazwisko);
         this.PESEL = PESEL;
         this.telefon = telefon;
-        this.data = data;
+        this.dataDodania = LocalDate.now();
         this.wynagrodzenie = wynagrodzenie;
     }
 
@@ -31,12 +30,12 @@ public class Sprzedawca extends Osoba {
     }
 
     @Override
-    public LocalDate getData() {
-        return data;
+    public LocalDate getDataDodania() {
+        return dataDodania;
     }
 
 
-    public static void szukajPoImieniu(String imie) throws ClassNotFoundException{
+    public static void szukajPoImieniu(String imie) throws ClassNotFoundException {
         Iterable<Sprzedawca> sprzedawcaExtent = ObjectPlus.getExtent(Sprzedawca.class);
         for (Sprzedawca sprzedawca : sprzedawcaExtent) {
             if (imie.equals(sprzedawca.getImie())) {
@@ -58,7 +57,7 @@ public class Sprzedawca extends Osoba {
 
 
     public String toString() {
-        String result = "Sprzedawca: " + getImie() + " " + getNazwisko() + " PESEL: " + getPESEL() + " Telefon: " + getTelefon() + " Data zatrudnienia: " + getData() + " Pensja: " + getWynagrodzenie() + " zl" + "\n" + " Obslugiwane zakupy:" + "\n";
+        String result = "Sprzedawca: " + getImie() + " " + getNazwisko() + " PESEL: " + getPESEL() + " Telefon: " + getTelefon() + " Data zatrudnienia: " + getDataDodania() + " Pensja: " + getWynagrodzenie() + " zl" + "\n" + " Obslugiwane zakupy:" + "\n";
         for (Zamowienie a : zamowienia2) {
             result += " ID zakupu: " + a.getNrZamowienia() + " laczny koszt tego zakupu: " + a.obliczWartoscZamowienia() + " zl " + "\n";
         }

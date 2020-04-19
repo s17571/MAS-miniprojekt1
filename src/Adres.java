@@ -7,14 +7,25 @@ public class Adres extends ObjectPlus implements Serializable {
     private String ulica;
     private int nrBudynku;
     private String funkcjaBudynku;
+    private Wydawnictwo wydawnictwo;
 
 
-    // Konstruktor
+    // Konstruktor dla wydawnictw
     public Adres(String funkcjaBudynku, Wydawnictwo wydawnictwo, String kraj, String miejscowosc, String ulica, int nrBudynku) throws Exception {
         super();
         if (wydawnictwo == null) {
-            throw new Exception("Brak wytworni");
+            throw new Exception("Brak wydawnictwa");
         }
+        this.funkcjaBudynku = funkcjaBudynku;
+        this.kraj = kraj;
+        this.miejscowosc = miejscowosc;
+        this.ulica = ulica;
+        this.nrBudynku = nrBudynku;
+    }
+
+    // Konstruktor dla klientow (firm)
+    public Adres(String funkcjaBudynku, String kraj, String miejscowosc, String ulica, int nrBudynku) throws Exception {
+        super();
         this.funkcjaBudynku = funkcjaBudynku;
         this.kraj = kraj;
         this.miejscowosc = miejscowosc;
@@ -50,7 +61,7 @@ public class Adres extends ObjectPlus implements Serializable {
     }
 
     public String toString() {
-        String result = "" + getKraj() + " " + getMiejscowosc() + " " + getMiejscowosc() + " " + getUlica() + " " + getNrBudynku();
+        String result = "" + getKraj() + " " + getMiejscowosc() + " " + getUlica() + " " + getNrBudynku();
         return result;
     }
 }

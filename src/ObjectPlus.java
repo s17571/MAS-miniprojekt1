@@ -14,7 +14,7 @@ public class ObjectPlus implements Serializable {
         List<ObjectPlus> extent = null;
         Class theClass = this.getClass();
 
-        if (allExtents.containsKey(theClass)){
+        if (allExtents.containsKey(theClass)) {
             // Extent of this class already exists
             extent = allExtents.get(theClass);
         } else {
@@ -35,7 +35,7 @@ public class ObjectPlus implements Serializable {
 
 
     public static <T> Iterable<T> getExtent(Class<T> type) throws ClassNotFoundException {
-        if (allExtents.containsKey(type)){
+        if (allExtents.containsKey(type)) {
             return (Iterable<T>) allExtents.get(type);
         }
         throw new ClassNotFoundException(

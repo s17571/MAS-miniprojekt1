@@ -2,17 +2,18 @@ import java.time.LocalDate;
 
 public class Lektor extends Osoba {
 
-    private LocalDate data;
+    private LocalDate dataDodania;
 
     // Konstruktor
     public Lektor(String imie, String nazwisko) {
         super(imie, nazwisko);
+        this.dataDodania = LocalDate.now();
     }
 
     // Gettery
     @Override
-    public LocalDate getData() {
-        return data;
+    public LocalDate getDataDodania() {
+        return dataDodania;
     }
 
 }

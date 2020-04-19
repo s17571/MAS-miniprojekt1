@@ -5,11 +5,12 @@ public class AutorTekstu extends Osoba {
 
     private String nazwisko;
     private String imie;
-    private LocalDate data;
+    private LocalDate dataDodania;
 
     // Konstruktor
     public AutorTekstu(String imie, String nazwisko) {
         super(imie, nazwisko);
+        this.dataDodania = LocalDate.now();
     }
 
     // Gettery
@@ -22,8 +23,8 @@ public class AutorTekstu extends Osoba {
     }
 
     @Override
-    public LocalDate getData() {
-        return data;
+    public LocalDate getDataDodania() {
+        return dataDodania;
     }
 
 

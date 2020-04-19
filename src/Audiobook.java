@@ -49,7 +49,7 @@ public class Audiobook extends ObjectPlus implements Serializable {
     }
 
     // miniprojekt - trwalosc ekstensji - klasa ObjectPlus, przyklad uzycia:
-    public static void showExtent() throws Exception{
+    public static void showExtent() throws Exception {
         ObjectPlus.showExtent(Audiobook.class);
     }
 
@@ -58,15 +58,12 @@ public class Audiobook extends ObjectPlus implements Serializable {
         ArrayList<Audiobook> audiobookiZBrakami = new ArrayList<Audiobook>();
         Iterable<Audiobook> audiobookExtent = ObjectPlus.getExtent(Audiobook.class);
         for (Audiobook a : audiobookExtent) {
-           if (a.getStanMagazynowy() <= ALARMUJACY_STAN_MAGAZYNOWY) {
-               audiobookiZBrakami.add(a);
-           }
+            if (a.getStanMagazynowy() <= ALARMUJACY_STAN_MAGAZYNOWY) {
+                audiobookiZBrakami.add(a);
+            }
         }
         return audiobookiZBrakami;
     }
-
-
-
 
 
     public int getLiczbaLatOdWydania() {

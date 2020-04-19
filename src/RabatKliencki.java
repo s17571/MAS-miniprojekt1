@@ -11,7 +11,7 @@ public abstract class RabatKliencki extends ObjectPlus implements Serializable {
     }
 
     // Gettery
-    public double getZnizkaProcentowa(){
+    public double getZnizkaProcentowa() {
         return znizkaProcentowa;
     }
 }

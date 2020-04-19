@@ -3,14 +3,13 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Wydawnictwo extends ObjectPlus implements Serializable{
+public class Wydawnictwo extends ObjectPlus implements Serializable {
 
     private String nazwaWydawnictwa;
     private long telefon; // atrybut wymagany, nie moze byc null
     private String email;
     private TreeMap<String, Audiobook> audiobooks = new TreeMap<String, Audiobook>();
     private ArrayList<Adres> adresy = new ArrayList<Adres>();
-
 
     // Konstruktor
     public Wydawnictwo(String nazwaWydawnictwa, long telefon, String email) {
@@ -24,26 +23,17 @@ public class Wydawnictwo extends ObjectPlus implements Serializable{
     public String getNazwaWydawnictwa() {
         return nazwaWydawnictwa;
     }
+
     public long getTelefon() {
         return telefon;
     }
+
     public String getEmail() {
         return email;
     }
 
-
-
-
-
-
-
-
-
-
-
-
     public Audiobook szukajPoNazwieWydawnictwa(String nazwa) throws Exception {
-        System.out.println("## "+ audiobooks);
+        System.out.println("## " + audiobooks);
         if (!audiobooks.containsKey(nazwa)) {
             throw new Exception("Nie znaleziono wydawnictwa o tej nazwie " + nazwa);
         }
@@ -59,23 +49,20 @@ public class Wydawnictwo extends ObjectPlus implements Serializable{
         }
     }
 
-
     public String toString() {
         String result = "Wydawnictwo: " + getNazwaWydawnictwa() + "\n";
         for (Adres a : adresy) {
             result += " Lokalizacja budynku: " + a.getKraj() + " " + a.getMiejscowosc() + " " + a.getUlica() + " " + a.getNrBudynku();
         }
 //        for (Map.Entry<String, Audiobook> entry : audiobooks.entrySet()) {
-//            String NazwaPlyty = entry.getKey();
+//            String nazwaAudiobooka = entry.getKey();
 //
-//            result += " Audiobook: " + NazwaPlyty + "\n";
+//            result += " Audiobook: " + nazwaAudiobooka + "\n";
 //        }
 
         return result;
 
     }
-
-
 
 
 }

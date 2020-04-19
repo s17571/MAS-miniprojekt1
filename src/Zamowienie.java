@@ -13,11 +13,14 @@ public class Zamowienie extends ObjectPlus implements Serializable {
     private double znizkaPromocyjna; // np. 0.2 znizki
 
     // Konstruktor
-    public Zamowienie(int nrZamowienia, Osoba klient, Osoba sprzedawca) {
+    public Zamowienie(int nrZamowienia, Osoba klient, Osoba sprzedawca, double znizkaPromocyjna) {
         super();
         this.nrZamowienia = nrZamowienia;
         this.klient = klient;
         this.sprzedawca = sprzedawca;
+        this.znizkaPromocyjna = znizkaPromocyjna;
+        this.status = "Nowe";
+        this.dataDodania = LocalDate.now();
     }
 
     // Gettery
@@ -46,23 +49,19 @@ public class Zamowienie extends ObjectPlus implements Serializable {
         return suma;
     }
 
-
     public void addAudiobook(Audiobook nowaAudiobook) {
         if (!audiobook.contains(nowaAudiobook)) {
             audiobook.add(nowaAudiobook);
             nowaAudiobook.addZamowienie(this);
         }
-
     }
 
     public String toString() {
-        String result = " ID zakupow: " + getNrZamowienia() + " laczny koszt tego zakupu: " + obliczWartoscZamowienia() + " zl " + "\n" + " Lista produktow: " + "\n";
+        String result = " Nr zamowienia: " + getNrZamowienia() + " Laczny koszt zamowienia: " + obliczWartoscZamowienia() + " zl " + "\n" + " Lista produktow: " + "\n";
         for (Audiobook a : audiobook) {
             result += " Audiobook: " + a.getTytul() + " Cena: " + a.getCenaNetto() + " zl" + "\n";
         }
         return result;
-
     }
-
 
 }

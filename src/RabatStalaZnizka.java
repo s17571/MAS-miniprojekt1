@@ -1,7 +1,7 @@
-public class RabatStalaZnizka extends RabatKliencki{
+public class RabatStalaZnizka extends RabatKliencki {
 
     // Konstruktor
-    RabatStalaZnizka(double znizkaProcentowa){
+    RabatStalaZnizka(double znizkaProcentowa) {
         super(znizkaProcentowa);
     }
 }
