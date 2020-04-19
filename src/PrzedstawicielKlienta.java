@@ -76,6 +76,4 @@ public class PrzedstawicielKlienta extends Osoba {
                 getWartoscZamowien() + " PLN";
         return result;
     }
-
-
 }

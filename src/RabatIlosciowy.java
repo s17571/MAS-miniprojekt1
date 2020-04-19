@@ -12,5 +12,4 @@ public class RabatIlosciowy extends RabatKliencki {
     public double getMinimalnaWartoscZamowienia() {
         return minimalnaWartoscZamowienia;
     }
-
 }

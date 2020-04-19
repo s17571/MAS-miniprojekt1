@@ -51,10 +51,7 @@ public class Sprzedawca extends Osoba {
                 System.out.println("Szukales: " + sprzedawca);
             }
         }
-
-
     }
-
 
     public String toString() {
         String result = "Sprzedawca: " + getImie() + " " + getNazwisko() + " PESEL: " + getPESEL() + " Telefon: " + getTelefon() + " Data zatrudnienia: " + getDataDodania() + " Pensja: " + getWynagrodzenie() + " zl" + "\n" + " Obslugiwane zakupy:" + "\n";
