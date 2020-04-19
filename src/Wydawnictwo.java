@@ -63,13 +63,13 @@ public class Wydawnictwo extends ObjectPlus implements Serializable{
     public String toString() {
         String result = "Wydawnictwo: " + getNazwaWydawnictwa() + "\n";
         for (Adres a : adresy) {
-            result += " Lokalizacja budynku: " + a.getKraj() + " " + a.getMiejscowosc() + " " + a.getUlica() + " " + a.getNrBudynku() + "\n";
+            result += " Lokalizacja budynku: " + a.getKraj() + " " + a.getMiejscowosc() + " " + a.getUlica() + " " + a.getNrBudynku();
         }
-        for (Map.Entry<String, Audiobook> entry : audiobooks.entrySet()) {
-            String NazwaPlyty = entry.getKey();
-
-            result += " Audiobook: " + NazwaPlyty + "\n";
-        }
+//        for (Map.Entry<String, Audiobook> entry : audiobooks.entrySet()) {
+//            String NazwaPlyty = entry.getKey();
+//
+//            result += " Audiobook: " + NazwaPlyty + "\n";
+//        }
 
         return result;
 

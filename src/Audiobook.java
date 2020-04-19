@@ -82,14 +82,9 @@ public class Audiobook extends ObjectPlus implements Serializable {
         }
     }
 
-
     @Override
     public String toString() {
-        String result = " " + getWydawnictwo();
-        for (AutorTekstu a : autorzy) {
-            result += "  Autorzy: " + a.getNazwisko() + "\n";
-        }
+        String result = "Tytul: " + getTytul() + "\n" + " Wydawnictwo: " + getWydawnictwo() + "\n" + " W magazynie: " + getStanMagazynowy();
         return result;
     }
-
 }

@@ -4,9 +4,13 @@ public class Main {
 
 		// Tworzenie danych
 		DataCreation.utworzDane();
-		//TODO printy z metod z miniprojektu 1
-		System.out.println("Audiobook.showExtent() ");
+
+		System.out.println("AUDIOBOOKI:");
 		Audiobook.showExtent();
-		System.out.println("Audiobook.znajdzBraki() ");
+		System.out.println();
+
+		System.out.println("BRAKI MAGAZYNOWE:");
 		System.out.println(Audiobook.znajdzBraki());
+
+
 	}}
