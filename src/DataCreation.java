@@ -27,7 +27,6 @@ public class DataCreation {
             autorTekstu1.showLinks("audiobook", System.out);
             System.out.println();
             audiobook1.showLinks("autor tekstu", System.out);
-            ObjectPlus.removeExtent(AutorTekstu.class, autorTekstu1, "autor tekstu");
 
             // 2. Asocjacja z atrybutem
             // Sprzedawca i Region - wiele do wielu - jeden sprzedawca moze byc przypisany do wielu regionow, a jeden
@@ -97,7 +96,7 @@ public class DataCreation {
             // klient.showLinks("part", System.out);
 
 
-            // 5. Agregacja - implementacja agregacji, ktora nie jest kompozycja jest dokładnie taka sama jak asocjacji
+            // 5. Agregacja czesciowa - implementacja agregacji, ktora nie jest kompozycja jest dokładnie taka sama jak asocjacji
             // Część może należeć do kilku całości.
             // Usunięcie klasy całość nie wpływa na istnienie klasy część.
             // Silniejsza forma asocjacji - równowaga między powiązanymi klasami jest zaburzona: istnieje właściciel i obiekt podrzędny

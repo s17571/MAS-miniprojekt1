@@ -39,10 +39,10 @@ public class Wydawnictwo extends ObjectPlusPlus {
 //        }
 //    }
 
-    public String szukajPoNazwieAudiobooka(String nazwa) throws Exception {
+    public ObjectPlusPlus szukajPoNazwieAudiobooka(String nazwa) throws Exception {
         if(getLinkedObject("audiobook", nazwa) == null) {
             throw new Exception("Nie znaleziono audiobooka " + nazwa + " przypisanego do tego wydawnictwa");
-        } else return "Istnieje audiobook " + nazwa;
+        } else return getLinkedObject("audiobook", nazwa);
     }
 
     public void addAdresWytworni(Adres adres) throws Exception {
