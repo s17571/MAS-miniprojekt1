@@ -3,7 +3,7 @@ import java.time.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public abstract class Osoba extends ObjectPlus implements Serializable {
+public abstract class Osoba extends ObjectPlusPlus {
 
     private String imie;
     private String nazwisko;

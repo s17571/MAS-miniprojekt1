@@ -1,7 +1,9 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class Wydawnictwo extends ObjectPlus implements Serializable {
+public class Wydawnictwo extends ObjectPlusPlus {
 
     private String nazwaWydawnictwa;
     private long telefon; // atrybut wymagany, nie moze byc null
@@ -29,9 +31,18 @@ public class Wydawnictwo extends ObjectPlus implements Serializable {
         return email;
     }
 
-    public Audiobook szukajPoNazwieWydawnictwa(String nazwa) throws Exception {
-        //TODO implement
-        return null;
+//    public void addAudiobookQualif(Audiobook audiobook) throws Exception {
+//        if(!audiobookQualif.containsKey(audiobook.tytul)) {
+//            audiobookQualif.put(audiobook.tytul, audiobook);
+//            // polaczenie zwrotne
+//            audiobook.addWydawnictwo(this);
+//        }
+//    }
+
+    public String szukajPoNazwieAudiobooka(String nazwa) throws Exception {
+        if(getLinkedObject("audiobook", nazwa) == null) {
+            throw new Exception("Nie znaleziono audiobooka " + nazwa + " przypisanego do tego wydawnictwa");
+        } else return "Istnieje audiobook " + nazwa;
     }
 
     public void addAdresWytworni(Adres adres) throws Exception {

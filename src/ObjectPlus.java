@@ -54,10 +54,35 @@ public class ObjectPlus implements Serializable {
             throw new Exception("Unknown class" + theClass);
         }
 
-        System.out.println("Extent of the class " + theClass);
-
+        System.out.println("Extent of the class " + theClass + ":");
+        if (extent.isEmpty()) {
+            System.out.println("No extents!");
+        }
         for (Object obj : extent) {
             System.out.println(obj);
         }
+    }
+
+    public static void removeExtent (Class theClass, ObjectPlusPlus objectPlusPlus, String roleName) throws Exception {
+        if (roleName == "part" || roleName == "whole") {
+            if (objectPlusPlus.getLinks("part").length > 0) {
+                throw new Exception("Calosc ma powiazane czesci, uzyj metody removeExtentWithParts");
+            }
+        }
+        if (allExtents.get(theClass).contains(objectPlusPlus)) {
+            allExtents.get(theClass).remove(objectPlusPlus);
+        } else throw new Exception ("Such object doesn't exists");
+    }
+
+    public static void removeExtentWithParts (Class theClass, Class partClass, ObjectPlusPlus objectPlusPlus) throws Exception {
+        if (objectPlusPlus.getLinks("part").length > 0) {
+            for (ObjectPlusPlus o : objectPlusPlus.getLinks("part")) {
+                objectPlusPlus.removePart(o);
+                allExtents.get(partClass).remove(o);
+            }
+        }
+        if (allExtents.get(theClass).contains(objectPlusPlus)) {
+            allExtents.get(theClass).remove(objectPlusPlus);
+        } else throw new Exception ("Such object doesn't exists");
     }
 }

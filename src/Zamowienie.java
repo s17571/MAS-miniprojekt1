@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Zamowienie extends ObjectPlus implements Serializable {
+public class Zamowienie extends ObjectPlusPlus {
 
     private int nrZamowienia;
     private LocalDate dataDodania;

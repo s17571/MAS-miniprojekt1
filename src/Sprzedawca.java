@@ -54,10 +54,11 @@ public class Sprzedawca extends Osoba {
     }
 
     public String toString() {
-        String result = "Sprzedawca: " + getImie() + " " + getNazwisko() + " PESEL: " + getPESEL() + " Telefon: " + getTelefon() + " Data zatrudnienia: " + getDataDodania() + " Pensja: " + getWynagrodzenie() + " zl" + "\n" + " Obslugiwane zakupy:" + "\n";
-        for (Zamowienie a : zamowienia2) {
-            result += " ID zakupu: " + a.getNrZamowienia() + " laczny koszt tego zakupu: " + a.obliczWartoscZamowienia() + " zl " + "\n";
-        }
+        String result = "Sprzedawca: " + getImie() + " " + getNazwisko() + " PESEL: " + getPESEL() + " Telefon: " + getTelefon() + " Data zatrudnienia: " + getDataDodania() + " Pensja: " + getWynagrodzenie() + " zl";
+                //+ "\n" + " Obslugiwane zakupy:" + "\n";
+        //for (Zamowienie a : zamowienia2) {
+        //    result += " ID zakupu: " + a.getNrZamowienia() + " laczny koszt tego zakupu: " + a.obliczWartoscZamowienia() + " zl " + "\n";
+        //}
         return result;
     }
 

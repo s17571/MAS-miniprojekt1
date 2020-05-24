@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public abstract class RabatKliencki extends ObjectPlus implements Serializable {
+public abstract class RabatKliencki extends ObjectPlusPlus {
 
     private double znizkaProcentowa;
 
